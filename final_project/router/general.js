@@ -32,6 +32,22 @@ public_users.get('/',function (req, res) {
   return res.status(200).send(JSON.stringify(books, null, 4));
 });
 
+/*
+const axios = require('axios');
+
+const getBooksPromise = () => {
+  axios.get('http://localhost:5000/')
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
+};
+
+getBooksPromise();
+*/
+
 // Get book details based on ISBN
 public_users.get('/isbn/:isbn',function (req, res) {
   const isbn = req.params.isbn;
@@ -43,6 +59,22 @@ public_users.get('/isbn/:isbn',function (req, res) {
     return res.status(404).json({ message: "Book not found for the given ISBN" });
   }
 });
+
+/*
+const axios = require('axios');
+
+const getBookByISBN = (isbn) => {
+  axios.get(`http://localhost:5000/isbn/${isbn}`)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
+};
+
+getBookByISBN(1);
+*/
   
 // Get book details based on author
 public_users.get('/author/:author',function (req, res) {
@@ -63,6 +95,23 @@ public_users.get('/author/:author',function (req, res) {
   }
 });
 
+/*
+onst axios = require('axios');
+
+const getBooksByAuthor = async (author) => {
+  try {
+    // Encode author name to be URL-safe (e.g., "Chinua Achebe" => "Chinua%20Achebe")
+    const encodedAuthor = encodeURIComponent(author);
+    const response = await axios.get(`http://localhost:5000/author/${encodedAuthor}`);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+getBooksByAuthor("Chinua Achebe");
+*/
+
 // Get all books based on title
 public_users.get('/title/:title',function (req, res) {
   const title = req.params.title;
@@ -81,6 +130,23 @@ public_users.get('/title/:title',function (req, res) {
     return res.status(404).json({ message: "No books found with that title" });
   }
 });
+
+/*
+const axios = require('axios');
+
+const getBooksByTitle = async (title) => {
+  try {
+    // Encode title to be URL-safe
+    const encodedTitle = encodeURIComponent(title);
+    const response = await axios.get(`http://localhost:5000/title/${encodedTitle}`);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+getBooksByTitle("Things Fall Apart");
+*/
 
 //  Get book review
 public_users.get('/review/:isbn',function (req, res) {
