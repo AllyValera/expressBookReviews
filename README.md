@@ -1,8 +1,8 @@
-# 📚 Online Book Review App
+# Online Book Review App
 This project is the final assignment for the Developing Back-End Apps with Node.js and Express course on Coursera, which is part of the IBM Full Stack Software Developer Professional Certificate. In this project, I have built a server-side online book review application, integrated it with a secure REST API using JWT based session level authentication, and tested the built application using Promises callbacks or Async-Await functions.
 
 ***
-## 🏡 Features
+## Features
 
 Register and log in with a username and password
 
@@ -16,7 +16,7 @@ Add, update, or delete a review (only for authenticated users)
 
 Reviews are tied to the user who posted them
 
-## 🚀 Technologies Used
+## Technologies Used
 Node.js - A JavaScript runtime environment that allows you to run JavaScript code on the server side, enabling fast and scalable network applications. 
 
 Express - A minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. 
@@ -25,7 +25,7 @@ Axios - A promise-based HTTP client for making requests to APIs, supporting asyn
 
 JWT (jsonwebtoken) - A compact, URL-safe token format used for securely transmitting information between parties as a JSON object, commonly used for authentication. 
 
-## 📬 API Endpoints
+## API Endpoints
 | Method | Route                          | Description                                         |
 |--------|--------------------------------|-----------------------------------------------------|
 | `GET`  | `/`                            | Get the list of all books                          |
@@ -37,7 +37,7 @@ JWT (jsonwebtoken) - A compact, URL-safe token format used for securely transmit
 | `PUT`  | `/auth/review/:isbn`           | Add or modify a review for a book (for users only) |
 | `DELETE`| `/auth/review/:isbn`          | Delete a review for a book (for users only)        |
 
-## 📂 Project Setup
+## Project Setup
 Clone the repository:
   `git clone https://github.com/AllyValera/expressBookReviews`
   `cd expressBookReviews`
@@ -52,7 +52,7 @@ Go to `http://localhost:5000`
 
 *** 
 
-## 🧪 Sample cURL Commands
+## Sample cURL Commands
 ### Get information for book with ISBN 1
 ``curl http://localhost:5000/isbn/1``
 
@@ -70,5 +70,5 @@ Go to `http://localhost:5000`
 
 ***
 
-## 📌 Submission Details
+## Submission Details
 This project is stored in a public GitHub repository as part of a peer-reviewed assignment for the course.
